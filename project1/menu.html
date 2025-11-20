@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Menu Utama — Perusahaan ABC</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg1:#0f0b1a;--glass:rgba(255,255,255,0.04);--accent1:#7b2ff7;--accent2:#2bd2ff;--muted:rgba(255,255,255,0.75)}
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#0f0b1a,#121026);color:#f3f4f8;min-height:100vh;display:flex;flex-direction:column}
+    .wrap{max-width:1100px;margin:28px auto;padding:18px}
+    .header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+    .header h2{margin:0}
+    .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{padding:18px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px)}
+    .logout{padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;text-decoration:none;font-weight:700}
+    footer{margin-top:24px;padding:12px;border-radius:10px;text-align:center;color:var(--muted);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <h2>Menu Utama</h2>
+        <div id="welcome" style="color:var(--muted)">Memuat...</div>
+      </div>
+      <div>
+        <a href="#" class="logout" onclick="logout()">Logout</a>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>Profil</h4>
+        <p style="color:var(--muted)">Akses detail profil perusahaan.</p>
+        <div style="margin-top:12px"><a href="detail.html?id=1" class="logout" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:8px;text-decoration:none">Lihat</a></div>
+      </div>
+
+      <div class="card">
+        <h4>Layanan</h4>
+        <p style="color:var(--muted)">Daftar layanan dan portofolio.</p>
+        <div style="margin-top:12px"><a href="detail.html?id=3" class="logout" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:8px;text-decoration:none">Lihat</a></div>
+      </div>
+
+      <div class="card">
+        <h4>Pengaturan</h4>
+        <p style="color:var(--muted)">Pengaturan akun dan preferensi.</p>
+      </div>
+    </div>
+
+    <footer id="footer"></footer>
+  </div>
+
+  <script>
+  
+   const MY_NPM = "23552011387";
+    const MY_NAME = "Federix Aryansyah";
+    const MY_CLASS = "TIF RP-23 CNS A";
+    document.getElementById('footer').innerText = "@Copyright by " + MY_NPM + "_" + MY_NAME + "_" + MY_CLASS;
+
+    
+    const isLogin = localStorage.getItem('isLogin') === 'true';
+    if(!isLogin){
+      window.location.href = 'login.html';
+    } else {
+      const u = JSON.parse(localStorage.getItem('currentUser') || '{}');
+      document.getElementById('welcome').innerText = 'Selamat datang, ' + (u.nama || u.username || 'Pengguna') + '!';
+    }
+
+    function logout(){
+      localStorage.removeItem('isLogin');
+      localStorage.removeItem('currentUser');
+    
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

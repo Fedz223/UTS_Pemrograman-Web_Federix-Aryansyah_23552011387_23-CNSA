@@ -1,0 +1,25 @@
+meta {
+  name: UTS_Federix
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/informasi/
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "judul": "Baru",
+    "detail": "Testing API"
+  }
+  
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

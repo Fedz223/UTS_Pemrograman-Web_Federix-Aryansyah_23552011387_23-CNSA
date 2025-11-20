@@ -1,0 +1,39 @@
+{
+  "informasi": [
+    {
+      "id": "2",
+      "judul": "Visi & Misi",
+      "detail": "Visi: Menjadi perusahaan terbaik..."
+    },
+    {
+      "id": "J-t0f",
+      "judul": "Baru",
+      "detail": "Testing API"
+    },
+    {
+      "id": "x4QfD",
+      "judul": "Update Data",
+      "detail": "Isi sudah diperbarui"
+    },
+    {
+      "id": "g8uwM",
+      "judul": "Baru",
+      "detail": "Testing API"
+    },
+    {
+      "id": "7uRM0",
+      "judul": "Baru",
+      "detail": "Testing API"
+    },
+    {
+      "id": "1763606690103",
+      "judul": "Test Bruno",
+      "detail": "Berhasil!"
+    },
+    {
+      "id": "1763606712416",
+      "judul": "Data dari Bruno",
+      "detail": "Testing tambah data"
+    }
+  ]
+}

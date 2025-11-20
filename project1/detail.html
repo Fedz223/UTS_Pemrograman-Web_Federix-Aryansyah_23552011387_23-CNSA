@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Detail Informasi — Perusahaan ABC</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600,700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg1:#0f0b1a;--glass:rgba(255,255,255,0.05);--muted:rgba(255,255,255,0.7)}
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#0f0b1a,#121026);color:#f3f4f8;min-height:100vh;display:flex;flex-direction:column}
+    .wrap{max-width:980px;margin:36px auto;padding:20px}
+    .back{color:var(--muted);text-decoration:none;margin-bottom:18px;display:inline-block}
+    .panel{background:var(--glass);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+    h1{margin:0 0 10px 0}
+    p{color:var(--muted);line-height:1.6}
+    footer{margin-top:28px;padding:10px;border-radius:10px;text-align:center;color:var(--muted);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="index.html">← Kembali</a>
+
+    <div class="panel">
+      <h1 id="judul">Detail Informasi</h1>
+      <p id="isi">Memuat...</p>
+    </div>
+
+    <footer id="footer"></footer>
+  </div>
+
+  <script>
+    const MY_NPM = "23552011387";
+    const MY_NAME = "Federix Aryansyah";
+    const MY_CLASS = "TIF RP-23 CNS A";
+    document.getElementById('footer').innerText = "@Copyright by " + MY_NPM + "_" + MY_NAME + "_" + MY_CLASS;
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || '1';
+
+    if (id === '1') {
+      document.getElementById('judul').innerText = 'Profil Perusahaan';
+      document.getElementById('isi').innerText = 'Perusahaan ABC didirikan pada tahun 1990 sebagai perusahaan jasa dan solusi teknologi. Berawal dari sebuah tim kecil, ABC berkembang menjadi perusahaan berskala nasional yang berfokus pada layanan inovatif dan berorientasi pada kebutuhan pelanggan.\n\nSejarah Singkat:\n- 1990: ABC berdiri sebagai perusahaan konsultasi.\n- 2000: Ekspansi ke pengembangan produk.\n- 2010: Pembukaan kantor regional.\n- 2020: Transformasi digital penuh.\n\nMilestone Penting:\n• Peluncuran produk digital pertama (2005)\n• Menjadi Top 10 perusahaan teknologi nasional (2015)\n• Memperoleh sertifikasi internasional kualitas layanan (2018)\n\nStruktur Organisasi:\n- Direktur Utama\n- Divisi Operasional\n- Divisi Pengembangan Produk\n- Divisi Keuangan\n- Divisi SDM\n- Divisi Layanan Pelanggan\n\nProfil ini menjelaskan perjalanan, pencapaian, serta dasar struktur kerja perusahaan ABC.';
+    } else if (id === '2') {
+      document.getElementById('judul').innerText = 'Visi & Misi';
+      document.getElementById('isi').innerText = 'Visi:\nMenjadi perusahaan teknologi terkemuka yang memberikan solusi inovatif dan berkelanjutan bagi masyarakat dan industri.\n\nMisi:\n1. Mengembangkan produk dan layanan berkualitas tinggi.\n2. Memberikan pengalaman terbaik bagi pelanggan.\n3. Mendorong budaya inovasi dan kolaborasi.\n4. Membangun kemitraan yang kuat dengan berbagai pihak.\n5. Berkontribusi pada perkembangan teknologi nasional.\n\nNilai Perusahaan:\n• Integritas – bekerja secara jujur dan transparan.\n• Inovasi – terus menghasilkan solusi baru.\n• Profesionalisme – memberikan standar kerja terbaik.\n• Kolaborasi – bekerja bersama untuk hasil maksimal.\n• Fokus Pelanggan – mengutamakan kebutuhan dan kepuasan klien.';
+    } else if (id === '3') {
+      document.getElementById('judul').innerText = 'Layanan Unggulan';
+      document.getElementById('isi').innerText = 'Layanan Unggulan Perusahaan ABC:\n\n1. Layanan Konsultasi Bisnis\nMembantu perusahaan mengembangkan strategi dan solusi teknologi yang efektif.\n\n2. Pengembangan Produk Teknologi\nMenyediakan jasa pembuatan aplikasi, sistem informasi, dan solusi digital sesuai kebutuhan pelanggan.\n\n3. Dukungan & Maintenance\nLayanan purna jual berupa pemeliharaan sistem, troubleshooting, dan peningkatan performa.\n\n4. Produk Unggulan:\n• ABC SoftSuite – paket sistem manajemen perusahaan.\n• ABC MobilePro – platform aplikasi mobile khusus bisnis.\n• ABC SecureNet – solusi keamanan jaringan modern.\n\nLayanan dan produk ini dirancang untuk mendukung berbagai kebutuhan industri secara komprehensif.';
+    } else {
+      document.getElementById('judul').innerText = 'Informasi Tidak Ditemukan';
+      document.getElementById('isi').innerText = 'ID informasi tidak sesuai.';
+    }
+  </script>
+</body>
+</html>

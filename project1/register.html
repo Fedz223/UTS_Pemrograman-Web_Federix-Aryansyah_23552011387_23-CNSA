@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Register — Perusahaan ABC</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f0b1a;--glass:rgba(255,255,255,0.05);--accent1:#7b2ff7;--accent2:#2bd2ff;--muted:rgba(255,255,255,0.75)}
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,#0f0b1a,#121026);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
+    .card{width:100%;max-width:420px;padding:28px;border-radius:16px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(8px)}
+    h2{margin:0 0 10px 0}
+    .input{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff;margin-top:12px}
+    .btn{width:100%;padding:12px;border-radius:10px;border:none;margin-top:16px;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
+    .muted{color:var(--muted);text-align:center;margin-top:12px}
+    footer{margin-top:22px;text-align:center;color:var(--muted)}
+    .note{font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Daftar Akun</h2>
+
+    <input id="fullname" class="input" placeholder="Nama Lengkap" />
+    <input id="regEmail" class="input" placeholder="Email (contoh: nama@domain.com)" />
+    <input id="regUser" class="input" placeholder="Username" />
+    <input id="regPass" type="password" class="input" placeholder="Password (min 6 karakter)" />
+
+    <button class="btn btn-primary" onclick="daftar()">Daftar Sekarang</button>
+
+    <div class="muted">Sudah punya akun? <a href="login.html" style="color:#d6e8ff;text-decoration:none">Masuk</a></div>
+  </div>
+
+  <footer id="footer"></footer>
+
+  <script>
+ 
+    const MY_NPM = "23552011387";
+    const MY_NAME = "Federix Aryansyah";
+    const MY_CLASS = "TIF RP-23 CNS A";
+    document.getElementById('footer').innerText = "@Copyright by " + MY_NPM + "_" + MY_NAME + "_" + MY_CLASS;
+
+  
+    function validEmail(e){
+  
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(e);
+    }
+
+    function daftar(){
+      const nama = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const user = document.getElementById('regUser').value.trim();
+      const pass = document.getElementById('regPass').value;
+
+      
+      if(nama === "" || email === "" || user === "" || pass === ""){
+        alert("Semua field harus diisi!");
+        return;
+      }
+
+      if(!validEmail(email)){
+        alert("Masukkan email yang valid!");
+        return;
+      }
+
+      if(pass.length < 6){
+        alert("Password minimal 6 karakter!");
+        return;
+      }
+
+      
+      const akun = { nama, email, username: user, password: pass };
+      localStorage.setItem('akunUser', JSON.stringify(akun));
+
+      alert("Registrasi berhasil! Silakan login.");
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
